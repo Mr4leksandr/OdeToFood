@@ -1,8 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:antiquewhite;
-    color: brown;
+    background-color:#222;
+    color: white;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -26,6 +26,10 @@ textarea {
 }
 
 .jumbotron {
-    color: coral;
-    background-color: lightblue;
+    color: lightgreen;
+    background-color: black;
+}
+
+.navbar {
+    border: solid 2px black;
 }
