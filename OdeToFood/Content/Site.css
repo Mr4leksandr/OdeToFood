@@ -45,3 +45,10 @@ textarea {
 .review p{
     font-size: 1rem;
 }
+
+.image{
+    height:150px;
+    margin-right:auto;
+    margin-left:auto;
+    display:block;
+}
