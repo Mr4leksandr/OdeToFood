@@ -30,6 +30,18 @@ textarea {
     background-color: black;
 }
 
-.navbar {
-    border: solid 2px black;
+.review{
+    padding: 2px;
+    border-bottom: solid 1px white;
+    padding-bottom:10px;
+}
+
+.review h4{
+    color: lightgreen;
+    padding:5px;
+    background-color:black;
+}
+
+.review p{
+    font-size: 1rem;
 }
