@@ -9,6 +9,14 @@ namespace OdeToFood.Controllers
 {
     public class ReviewController : Controller
     {
+
+        public ActionResult BestReview()
+        {
+            var best = from r in _reviews
+                       orderby r.Rating descending
+                       select r;
+            return PartialView("_Review",best.First());
+        }
         // GET: Review
         public ActionResult Index()
         {
@@ -49,23 +57,21 @@ namespace OdeToFood.Controllers
         // GET: Review/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var review = _reviews.Single(r => r.Id == id);
+
+            return View(review);
         }
 
         // POST: Review/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
+            var review = _reviews.Single(r => r.Id == id);
+            if (TryUpdateModel(review))
             {
-                // TODO: Add update logic here
-
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(review);
         }
 
         // GET: Review/Delete/5

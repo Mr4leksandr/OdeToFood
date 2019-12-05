@@ -11,7 +11,7 @@ namespace OdeToFood.Controllers
         // GET: Shop
         public ActionResult Food(string name, string type)
         {
-            return Content($"name = {name}\ntype = {type}");
+            return Content("name = "+name+" type = "+type);
         }
     }
 }

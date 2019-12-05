@@ -16,6 +16,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <img class="image" src="https://fbcd.co/images/products/1ddb34a9b298f2ae87edd8b2c9149b24_resize.jpg" alt="Alternate Text" />
                 @Html.ActionLink("Ode To Food", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
@@ -29,11 +30,12 @@
         </div>
     </div>
     <div class="container body-content">
-        <div class="img">
-            <img class="image" src="https://fbcd.co/images/products/1ddb34a9b298f2ae87edd8b2c9149b24_resize.jpg" alt="Alternate Text" />
-        </div>
         @RenderBody()
         <hr />
+        <div class="best">
+            <h2>Best Review!</h2>
+            @Html.Action("BestReview", "Review");
+        </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>

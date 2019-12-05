@@ -47,8 +47,22 @@ textarea {
 }
 
 .image{
-    height:150px;
+    height:50px;
     margin-right:auto;
     margin-left:auto;
-    display:block;
+    display:inline;
+}
+
+.best {
+    background-color: black;
+    border-radius: 6px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.navbar-inverse {
+    background-color: black;
+    border-color: white;
 }
