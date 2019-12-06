@@ -27,7 +27,7 @@ namespace OdeToFood.Migrations
                     Reviews =
                     new List<RestaurantReview>
                     {
-                        new RestaurantReview {Rating = 9, Body ="Great food!",RevierName="Scott"}
+                        new RestaurantReview {Rating = 9, Body ="Great food!"}
                     }
                 });
         }
