@@ -14,5 +14,6 @@ namespace OdeToFood.Models
         public int Rating { get; set; }
         public string Body { get; set; }
         public int RestaurantId { get; set; }
+        public string RevierName { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace OdeToFood.Controllers
             var best = from r in _reviews
                        orderby r.Rating descending
                        select r;
-            return PartialView("_Review",best.First());
+            return PartialView("_Review", best.First());
         }
         // GET: Review
         public ActionResult Index()
@@ -95,9 +95,9 @@ namespace OdeToFood.Controllers
                 return View();
             }
         }
-        static List<RestorantReview> _reviews = new List<RestorantReview>
+        static List<RestaurantReview> _reviews = new List<RestaurantReview>
         {
-            new RestorantReview
+            new RestaurantReview
             {
                 Id = 1,
                 Name = "Cinnamon Club",
@@ -105,7 +105,7 @@ namespace OdeToFood.Controllers
                 Country = "UK",
                 Rating = 10
             },
-            new RestorantReview
+            new RestaurantReview
             {
                 Id = 2,
                 Name = "Marrakesh",
@@ -113,7 +113,7 @@ namespace OdeToFood.Controllers
                 Country = "USA",
                 Rating = 10
             },
-            new RestorantReview
+            new RestaurantReview
             {
                 Id = 3,
                 Name = "The House of Elliot",
