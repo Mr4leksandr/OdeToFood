@@ -17,7 +17,6 @@ namespace OdeToFood
                 name: "Klemets",
                 url: "food/{type}/{name}",
                 defaults: new { controller = "Shop", action = "Food", type = UrlParameter.Optional, name = UrlParameter.Optional}
-                
             );
 
             routes.MapRoute(

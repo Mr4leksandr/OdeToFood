@@ -63,6 +63,17 @@ textarea {
 }
 
 .navbar-inverse {
-    background-color: #222;
+    background-color: black;
     border-color: white;
+}
+
+.searchBox{
+    margin-top:20px;
+    color: black;
+}
+
+.SBN {
+    color: white;
+    background-color:black;
+    border:1px solid white;
 }
