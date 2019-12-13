@@ -31,15 +31,16 @@ textarea {
 }
 
 .review{
-    padding: 2px;
+    padding:3px;
     border-bottom: solid 1px white;
     padding-bottom:10px;
 }
 
 .review h4{
-    color: lightgreen;
+    color: white;
     padding:5px;
     background-color:black;
+    border-radius:6px;
 }
 
 .review p{

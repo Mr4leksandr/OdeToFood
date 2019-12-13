@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AboutModel.cs" />
+    <Compile Include="Models\EditReviewViewModel.cs" />
     <Compile Include="Models\OdeToFoodDb.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\RestaurantListViewModel.cs" />
@@ -172,7 +173,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Review\LatestReviews.cshtml" />
-    <Content Include="Views\Review\Edit.cshtml" />
     <Content Include="Views\Review\_Review.cshtml" />
     <Content Include="Views\Restaurants1\Create.cshtml" />
     <Content Include="Views\Restaurants1\Delete.cshtml" />
@@ -180,6 +180,8 @@
     <Content Include="Views\Restaurants1\Index.cshtml" />
     <Content Include="Views\Review\Index.cshtml" />
     <Content Include="Views\Review\_Reviews.cshtml" />
+    <Content Include="Views\Review\Create.cshtml" />
+    <Content Include="Views\Review\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

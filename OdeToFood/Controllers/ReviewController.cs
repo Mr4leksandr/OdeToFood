@@ -1,6 +1,7 @@
 ﻿using OdeToFood.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -45,13 +46,13 @@ namespace OdeToFood.Controllers
             base.Dispose(disposing);
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Create ( int restaurantId)
         {
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult Create(RestaurantReview review)
         {
             if (ModelState.IsValid)
@@ -61,6 +62,28 @@ namespace OdeToFood.Controllers
                 return RedirectToAction("Index", new { id = review.RestaurantId });
             }
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var model = db.Reviews.Find(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(EditReviewViewModel review)
+        {
+            if (ModelState.IsValid)
+            {
+                var editable_review = db.Reviews.Find(review.Id);
+                editable_review.Body = review.Body;
+                editable_review.Rating = review.Rating;
+                db.Entry(editable_review).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index", new { id = 1 });
+            }
+            return View(review);
         }
 
         static List<RestaurantReview> _reviews = new List<RestaurantReview>
