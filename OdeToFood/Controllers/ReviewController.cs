@@ -49,6 +49,9 @@ namespace OdeToFood.Controllers
         [HttpGet]
         public ActionResult Create ( int restaurantId)
         {
+            var model = db.Restaurants.Find(restaurantId);
+            ViewBag.Name = model.Name;
+            ViewBag.restaurantId = model.Id;
             return View();
         }
 
@@ -72,7 +75,7 @@ namespace OdeToFood.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(EditReviewViewModel review)
+        public ActionResult Edit([Bind(Exclude ="RevierName")] RestaurantReview review)
         {
             if (ModelState.IsValid)
             {
