@@ -78,3 +78,8 @@ textarea {
     background-color: black;
     border: 1px solid white;
 }
+
+.right{
+    float:right;
+    margin-top:-20px;
+}
