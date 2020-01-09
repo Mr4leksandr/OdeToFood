@@ -4,20 +4,30 @@
     ViewBag.Title = "Home Page";
 }
 
-    <form class="searchBox" method="get">
+@*<form class="searchBox" method="get">
         <input type="search" name="searchTerm" />
         <input class="SBN" type="submit" value="Search By Name" />
-    </form>
+    </form>*@
 
-@foreach (var item in Model)
+<form method="get" action="@Url.Action("Index")" data-otf-ajax="true" data-otf-target="#restaurantList">
+    <input class="searchArea" type="search" name="searchTerm" />
+    <input class="SBN" type="submit" value="Search By Name" />
+</form>
+
+@*@using (Ajax.BeginForm(
+    new AjaxOptions
+    {
+        HttpMethod = "get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "restaurantList"
+    }))
 {
-    <div>
-        <h4>@item.Name</h4>
-        <div>@item.City, @item.Country</div>
-        <div>Reviews count: @item.CountOfReviews</div>
-        <hr />
-    </div>
-}
+    <input class="searchArea" type="search" name="searchTerm" />
+    <input class="SBN" type="submit" value="Search By Name" />
+}*@
+
+@Html.Partial("_Restaurants", Model)
+
     <div>
         <h2>3. Food</h2>
         <p><a class="btn btn-default" href="http://localhost:2257/food/Drink/Coca-Cola">Learn more &raquo;</a></p>

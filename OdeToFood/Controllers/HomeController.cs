@@ -11,7 +11,7 @@ namespace OdeToFood.Controllers
     {
         OdeToFoodDb _db = new OdeToFoodDb();
 
-        public ActionResult Index(string searchTerm=null)
+        public ActionResult Index(string searchTerm = null)
         {
             //var model =
             //    from r in _db.Restaurants
@@ -36,10 +36,14 @@ namespace OdeToFood.Controllers
                     Country = r.Country,
                     CountOfReviews = r.Reviews.Count()
                 });
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Restaurants", model);
+            }
 
             return View(model);
         }
-
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
