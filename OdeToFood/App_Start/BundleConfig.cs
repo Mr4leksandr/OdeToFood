@@ -30,9 +30,9 @@ namespace OdeToFood
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/jquery-ui*",
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/PagedList.css"));
         }
     }
 }
