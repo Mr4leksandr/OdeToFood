@@ -17,7 +17,7 @@ namespace OdeToFood.Controllers
             var model =
                 _db.Restaurants
                 .Where(r => r.Name.StartsWith(term))
-                .Take(10)
+                .Take(15)
                 .Select(r => new
                 {
                     label = r.Name
@@ -30,7 +30,7 @@ namespace OdeToFood.Controllers
             var model = _db.Restaurants
                 .OrderByDescending(r => r.Reviews.Average(review => review.Rating))
                 .Where(r => searchTerm == null || r.Name.StartsWith(searchTerm))
-                .Select(r => new RestaurantListViewModel
+                .Select(r => new RestaurantReview
                 {
                     Id = r.Id,
                     Name = r.Name,

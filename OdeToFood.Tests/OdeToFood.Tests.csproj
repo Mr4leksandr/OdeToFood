@@ -83,6 +83,10 @@
     <Reference Include="System.Net.Http.WebRequest" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\IRatingAlgorithm.cs" />
+    <Compile Include="Features\RatingResult.cs" />
+    <Compile Include="Features\RestaurantRater.cs" />
+    <Compile Include="Features\UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
