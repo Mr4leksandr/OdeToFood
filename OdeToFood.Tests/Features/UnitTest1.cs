@@ -45,7 +45,7 @@ namespace OdeToFood.Tests.Features
         [TestMethod]
         public void Weighted_Averaging_For_Multiple_Reviews()
         {
-            var restaurant = BuildRestaurantAndReviews(2, 2, 0, 0, 0, 0);
+            var restaurant = BuildRestaurantAndReviews(2, 2, 2, 0, 0, 0);
 
             var rater = new RestaurantRater(restaurant);
             var result = rater.ComputerResult(new WeightedRatingAlgorithm(),5);

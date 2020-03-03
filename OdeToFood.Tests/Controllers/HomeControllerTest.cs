@@ -15,14 +15,16 @@ namespace OdeToFood.Tests.Controllers
         [TestMethod]
         public void Index()
         {
-            //// Arrange
-            //HomeController controller = new HomeController();
+            // Arrange
+            var db = new FakeOdeToFoodDb();
+            db.AddSet(TestData.restaurants);
+            HomeController controller = new HomeController(db);
 
-            //// Act
-            //ViewResult result = controller.Index() as ViewResult;
+            // Act
+            ViewResult result = controller.Index() as ViewResult;
 
-            //// Assert
-            //Assert.IsNotNull(result);
+            // Assert
+            Assert.IsNotNull(result);
         }
 
         [TestMethod]
