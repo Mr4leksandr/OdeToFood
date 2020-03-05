@@ -14,7 +14,7 @@ namespace OdeToFood.Controllers
     {
         IOdeToFoodDb _db;
 
-        public Restaurant()
+        public Restaurants1Controller()
         {
             db = new OdeToFoodDb();
         }
