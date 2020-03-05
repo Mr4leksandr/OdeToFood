@@ -11,12 +11,15 @@ namespace OdeToFood.Tests.Fakes
     {
         HttpContextBase _context = new FakeHttpContext();
 
-        public override HttpContextBase HttpContext { get => base.HttpContext; set => base.HttpContext = value; }
+        public override HttpContextBase HttpContext {
+            get => _context;
+            set => _context = value;
+        }
     }
 
     class FakeHttpContext : HttpContextBase
     {
-        HttpRequestBase _request = new FakeHttpContext();
+        HttpRequestBase _request = new FakeHttpRequest();
         public override HttpRequestBase Request => _request;
     }
 

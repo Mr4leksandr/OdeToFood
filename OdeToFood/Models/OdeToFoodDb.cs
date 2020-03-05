@@ -9,16 +9,43 @@ namespace OdeToFood.Models
     public interface IOdeToFoodDb : IDisposable
     {
         IQueryable<T> Query<T>() where T : class;
+        void Add<T>(T entity) where T : class;
+        void Update<T>(T entity) where T : class;
+        void Removes<T>(T entity) where T : class;
+        void Save<T>(T entity) where T : class;
     }
-
     public class OdeToFoodDb : DbContext, IOdeToFoodDb
     {
+        public OdeToFoodDb() : base("name=DefaultConnection")
+        {
+
+        }
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<RestaurantReview> Reviews { get; set; }
+
+        public void Add<T>(T entity) where T : class
+        {
+            Set<T>().Add(entity);
+        }
 
         public IQueryable<T> Query<T>() where T : class
         {
             return Set<T>();
+        }
+
+        public void Removes<T>(T entity) where T : class
+        {
+            Set<T>().Remove(entity);
+        }
+
+        public void Save<T>(T entity) where T : class
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update<T>(T entity) where T : class
+        {
+            Entry(entity).State = EntityState.Modified;
         }
     }
 }
